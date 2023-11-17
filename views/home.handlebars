@@ -1,0 +1,16 @@
+<main>
+  {{#each publications}}
+    <img src="/assets/img/{{this.image}}.jpg" alt="" />
+    <div class="action-buttons">
+      <form action="/like" method="post">
+        <input type="hidden" name="PublicationId" value="{{this.id}}" />
+        <button type="submit">Like</button>
+      </form>
+      <form action="/comment" method="post">
+        <input type="hidden" name="PublicationId" value="{{this.id}}" />
+        <input type="text" name="comment" required="true">
+        <button type="submit"> > </button>
+      </form>
+    </div>
+  {{/each}}
+</main>
